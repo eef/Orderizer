@@ -7,6 +7,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'haml'
 gem 'haml-rails'
 gem 'therubyracer'
+gem 'devise'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
