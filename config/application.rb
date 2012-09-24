@@ -58,5 +58,11 @@ module Orderizer
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Override the default generators to not generate javascripts and css files
+    config.generators do |g|
+      g.stylesheets false
+      g.javascripts false
+    end
   end
 end
