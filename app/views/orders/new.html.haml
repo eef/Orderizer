@@ -1,5 +1,4 @@
-%h1 New order
-
-= render 'form'
-
-= link_to 'Back', orders_path
+- model_class = Order
+.page-header
+  %h1=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human, :default => "New #{model_class.model_name.human}")
+= render :partial => "form"
