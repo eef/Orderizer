@@ -1,0 +1,48 @@
+= hidden_field_tag "form_name", "1"
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  .page-header
+    %h2
+      Personal Information
+  = errors_for(resource, "Unable to create user").html_safe
+  .row-fluid
+    .span4
+      .control-group
+        = f.label :title, :class => 'control-label'
+        .controls
+          = f.select :title, options_for_select(Mpl::Application.config.titles)
+    .span4
+      .control-group
+        = f.label :first_name, :class => "control-label"
+        .controls
+          = f.text_field :first_name, :class => "text_field#{is_required(resource, :first_name)}", :placeHolder => "Enter your first name..."
+    .span3
+      .control-group
+        = f.label :last_name, :class => "control-label"
+        .controls
+          = f.text_field :last_name, :class => "text_field#{is_required(resource, :last_name)}", :placeHolder => "Enter your last name..."
+  .row-fluid
+    .span4
+      .control-group
+        = f.label :email, :class => "control-label"
+        .controls
+          = f.email_field :email, :class => "text_field#{is_required(resource, :email)}", :placeHolder => "Enter a valid email address..."
+    .span4
+      .control-group
+        = label :zip_code, :zip_code,:class => "control-label"
+        .controls
+          = text_field_tag :zip_code, nil,:class => "text_field required", :placeHolder => "Enter a your zip code..."
+  .row-fluid
+    .span4
+      .control-group
+        = f.label :password, :class => "control-label"
+        .controls
+          = f.password_field :password, :class => "text_field#{is_required(resource, :password)}", :placeHolder => "Choose a password..."
+    .span4
+      .control-group
+        = f.label :password_confirmation, :class => "control-label"
+        .controls
+          = f.password_field :password_confirmation, :class => "text_field required", :placeHolder => "Repeat the password..."
+          %p.help-block
+            (Used to login, update and renew policies)
+  .form-actions
+    = f.submit "Policy details >>", :class => 'btn btn-primary'

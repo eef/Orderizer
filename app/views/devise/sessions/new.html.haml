@@ -1,0 +1,19 @@
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  %p
+    %h2
+      Login
+  .control-group
+    = f.label :email, :class => 'control-label'
+    .controls
+      = f.email_field :email, :class => 'text_field'
+  .control-group
+    = f.label :password, :class => 'control-label'
+    .controls
+      = f.password_field :password, :class => 'text_field'
+  - if devise_mapping.rememberable?
+    .control-group
+      = f.label :remember_me, :class => 'checkbox' do
+        = f.check_box :remember_me
+        = "Remember me"
+  = f.submit "Login", :class => 'btn btn-primary'
+= render "links"
