@@ -1,0 +1,7 @@
+%tr
+  %td
+    = order.status.titleize
+  %td
+    =order.created_at.strftime("%a %d %b. %Y")
+  %td
+    = render :partial => "order_actions", :locals => {:order => order}
