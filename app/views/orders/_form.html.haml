@@ -2,7 +2,7 @@
   .control-group
     = f.label :status, :class => 'control-label'
     .controls
-      = f.text_field :status, :class => 'text_field'
+      = f.select :status, options_for_select(Orderizer::Application.config.statuses),:class => 'text_field'
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), orders_path, :class => 'btn'

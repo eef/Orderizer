@@ -56,6 +56,8 @@ module Orderizer
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    config.statuses = ["open", "pending", "closed"]
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
