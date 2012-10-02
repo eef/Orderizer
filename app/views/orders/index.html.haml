@@ -1,6 +1,3 @@
-- model_class = Order
-%h2
-  Open Orders
-.well
-  = render :partial => "orders", :locals => {:title => "Open", :orders => @orders[:open]}
+- @orders.each do |order_type, orders|
+  = render :partial => "orders", :locals => {:order_type => order_type.to_s.titleize, :orders => orders}
 = link_to t('.new', :default => t("helpers.links.new")), new_order_path, :class => 'btn btn-primary'

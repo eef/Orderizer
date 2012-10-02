@@ -1,11 +1,14 @@
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-        Status
-      %th
-        Created
-      %th
-        Actions
-  %tbody
-    = render :partial => "order", :collection => orders 
+%h2
+  == #{order_type} Orders
+.well
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+          Status
+        %th
+          Created
+        %th
+          Actions
+    %tbody
+      = render :partial => "order", :collection => orders 
