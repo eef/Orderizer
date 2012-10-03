@@ -13,3 +13,4 @@
           %a{:href => "mailto: #{@order.user.email}"}
             = @order.user.name
             %i.icon-envelope
+      = render :partial => "line_items"

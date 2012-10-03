@@ -1,0 +1,4 @@
+- if @order.line_items.blank?
+  No rolls yet
+- else
+  = render :partial => "line_item", :collection => @order.line_items, :as => :item
