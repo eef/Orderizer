@@ -1,16 +1,25 @@
 .row
-  .span9
+  .span8
     %h1
       == Order ##{@order.id}
     %p
       = render :partial => "order_status"
     = render :partial => "new_line_item" unless @order.closed?
-  .span3
+  .span4
     .well.sidebar-nav
       %p
-        Created by
+        %strong
+          Created by
         %span.label.label-info
           %a{:href => "mailto: #{@order.user.email}"}
             = @order.user.name
             %i.icon-envelope
+      %p
+        %strong
+          Total Price:
+        == £#{@order.total_price}
+      %hr
+      %h5
+        Items
+      %hr
       = render :partial => "line_items"

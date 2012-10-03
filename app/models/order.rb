@@ -29,4 +29,10 @@ class Order < ActiveRecord::Base
     self.status.eql?("open")
   end
 
+  def total_price
+    price = 0
+    self.line_items.each {|item| price = price + item.price.to_s.to_d }
+    price
+  end
+
 end
