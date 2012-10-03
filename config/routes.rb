@@ -2,6 +2,7 @@ Orderizer::Application.routes.draw do
 
   devise_for :users, :path => '', :path_names => {:sign_up => 'register', :sign_in => "login", :sign_out => "logout"}
 
+
   resources :orders do
     resources :line_item
   end
