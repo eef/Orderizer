@@ -1,8 +1,9 @@
 class Order < ActiveRecord::Base
-  attr_accessible :status
+  attr_accessible :status, :line_items_attributes
 
   belongs_to :user
-  has_many :line_items
+  has_many :line_items, :dependent => :destroy
+  accepts_nested_attributes_for :line_items, :allow_destroy => true
 
   # class methods
   # class methods are methods available when called from the class like so
