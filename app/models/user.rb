@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
 
   has_many :orders
+  has_many :line_items
 
   def name
     [self.first_name, self.last_name].join(" ")

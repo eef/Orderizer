@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   attr_accessible :status
 
   belongs_to :user
+  has_many :line_items
 
   # class methods
   # class methods are methods available when called from the class like so
