@@ -1,8 +1,9 @@
 %tr
   %td
-    = order.status.titleize
+    %span{:class => "label label-#{order_status_label(order.status)}"}
+      = order.status.titleize
   %td
-    =order.created_at.strftime("%a %d %b. %Y")
+    = order.created_at.strftime("%a %d %b. %Y")
   %td
     == #{order.user.name} (#{order.user.email})
   %td
