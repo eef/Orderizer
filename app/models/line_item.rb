@@ -1,3 +1,5 @@
 class LineItem < ActiveRecord::Base
-  attr_accessible :description, :order_id, :price, :user_id
+  attr_accessible :description, :price
+  belongs_to :user
+  belongs_to :order
 end

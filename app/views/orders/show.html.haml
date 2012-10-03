@@ -4,6 +4,7 @@
       == Order ##{@order.id}
     %p
       = render :partial => "order_status"
+    = render :partial => "new_line_item" unless @order.closed?
   .span3
     .well.sidebar-nav
       %p

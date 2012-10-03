@@ -4,7 +4,7 @@ Orderizer::Application.routes.draw do
 
 
   resources :orders do
-    resources :line_item
+    resources :line_items
   end
 
   # The priority is based upon order of creation:
