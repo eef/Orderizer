@@ -1,0 +1,15 @@
+.nav-collapsed
+  %ul.nav.pull-right
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        %i.icon-user
+        = current_user.name
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "#"}
+            Settings
+        %li.divider
+        %li
+          %a{:href => "#"}
+            = link_to "Sign out", destroy_user_session_path, :method => :delete
