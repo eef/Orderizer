@@ -1,0 +1,5 @@
+- if @order.open?
+  %span.label.label-success
+    This order is still open and accepting items.
+- elsif @order.closed?
+  This order is still closed and not acception items.
