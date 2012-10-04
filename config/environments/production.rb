@@ -65,8 +65,8 @@ Orderizer::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => "orderizer.herokuapp.com",
-    :user_name            => "uberhaqer",
-    :password             => "BzD{]zNM45rizla98y",
+    :user_name            => "arthur@citybam.com",
+    :password             => "akira45r",
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
