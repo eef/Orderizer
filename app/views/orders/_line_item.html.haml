@@ -2,7 +2,10 @@
   %td
     = item.user.name
   %td
-    = item.description
+    == #{item.description} (£#{item.price})
+  %td
     - if item.owner?(current_user)
-      == - #{link_to "Edit", edit_order_line_item_path(@order, item)} 
+      = link_to "Edit", edit_order_line_item_path(@order, item), :class => "btn btn-mini"
+    - else
+      -
 
