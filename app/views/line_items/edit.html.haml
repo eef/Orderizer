@@ -1,0 +1,10 @@
+%h3
+  Editing your roll
+= form_for @line_item, :url => order_line_item_path(@order) do |f|
+  .controls
+    = f.text_area :description, :rows => "5", :style => "width: 500px;", :class => 'text_field', :placeHolder => "Enter what you want #{current_user.first_name}"
+  .input-prepend
+    %span.add-on £
+    = f.text_field :price, :id => "prependedInput", :class => "span2" ,:placeholder => "Price", :size => "16"
+  = f.submit "Add", :class => "btn btn-primary"
+

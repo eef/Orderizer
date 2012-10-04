@@ -1,0 +1,8 @@
+%p
+  == Hello #{@item.user.first_name},
+%p
+  Your roll has been added to the order 
+.details{:style => "border: 1px solid #ddd; padding: 10px;"}
+  = @item.description
+%p
+  = link_to "Click here to change this", "http://orderizer.herokuapp.com/orders/#{@item.order.id}/line_items/#{@item.id}/edit"
