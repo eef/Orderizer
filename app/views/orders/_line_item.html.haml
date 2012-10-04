@@ -3,3 +3,6 @@
     = item.user.name
   %td
     = item.description
+    - if item.owner?(current_user)
+      == - #{link_to "Edit", edit_order_line_item_path(@order, item)} 
+

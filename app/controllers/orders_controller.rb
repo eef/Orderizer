@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
   end
 
   # POST /orders
@@ -58,7 +58,7 @@ class OrdersController < ApplicationController
   # PUT /orders/1
   # PUT /orders/1.json
   def update
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
@@ -74,7 +74,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
     @order.destroy
 
     respond_to do |format|

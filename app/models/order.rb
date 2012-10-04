@@ -39,4 +39,8 @@ class Order < ActiveRecord::Base
     price
   end
 
+  def owner?(user)
+    self.user.eql?(user)
+  end
+
 end
