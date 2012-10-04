@@ -34,4 +34,12 @@ Orderizer::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ActionMailer::Base.smtp_settings = {
+    :address => "localhost",
+    :port => 1025,
+    :domain => "localhost:3000"
+  }
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
