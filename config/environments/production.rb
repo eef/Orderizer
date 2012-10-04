@@ -62,15 +62,14 @@ Orderizer::Application.configure do
   config.active_support.deprecation = :notify
 
   ActionMailer::Base.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => "orderizer.herokuapp.com",
-    :user_name            => "arthur@citybam.com",
-    :password             => "akira45r",
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'orderizer.herokuapp.com'
   }
-
+  ActionMailer::Base.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'orderizer.herokuapp.com' }
 
   # Log the query plan for queries taking more than this (works
