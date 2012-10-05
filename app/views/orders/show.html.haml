@@ -14,6 +14,7 @@
           %a{:href => "mailto: #{@order.creator.email}"}
             = @order.creator.name
             %i.icon-envelope
+        = link_to "Edit order", edit_order_path(@order), :class => 'btn btn-mini btn-primary', :style => "margin-left: 10px;" if @order.owner?(current_user)
       %p
         %strong
           Total Price:
