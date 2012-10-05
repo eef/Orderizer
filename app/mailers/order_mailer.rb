@@ -13,6 +13,6 @@ class OrderMailer < ActionMailer::Base
   
   def added_line_item(item)
     @item = item
-    mail(:subject => "Your roll has been added to the order!")
+    mail(:subject => "Your roll has been added to the order!", :to => @item.user.email)
   end
 end
