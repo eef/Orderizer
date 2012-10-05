@@ -29,8 +29,8 @@ class Order < ActiveRecord::Base
     self.status.eql?("open")
   end
 
-  def sent?
-    self.status.eql?("sent")
+  def ordered?
+    self.status.eql?("ordered")
   end
 
   def total_price
