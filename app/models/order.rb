@@ -1,7 +1,8 @@
 class Order < ActiveRecord::Base
   attr_accessible :status, :line_items_attributes
 
-  belongs_to :user
+  belongs_to :creator, :class_name => "User", :foreign_key => :user_id
+  has_many :users, :through => :line_items
   has_many :line_items, :dependent => :destroy
   accepts_nested_attributes_for :line_items, :allow_destroy => true
 
@@ -14,6 +15,9 @@ class Order < ActiveRecord::Base
     end
     def closed
       where(:status => "closed")
+    end
+    def ordered
+      where(:status => "ordered")
     end
   end
 
@@ -40,7 +44,7 @@ class Order < ActiveRecord::Base
   end
 
   def owner?(user)
-    self.user.eql?(user)
+    self.creator.eql?(user)
   end
 
 end

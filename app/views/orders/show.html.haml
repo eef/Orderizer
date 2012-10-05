@@ -11,8 +11,8 @@
         %strong
           Created by
         %span.label.label-info
-          %a{:href => "mailto: #{@order.user.email}"}
-            = @order.user.name
+          %a{:href => "mailto: #{@order.creator.email}"}
+            = @order.creator.name
             %i.icon-envelope
       %p
         %strong

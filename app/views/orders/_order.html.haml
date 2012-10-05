@@ -5,6 +5,6 @@
   %td
     = order.created_at.strftime("%a %d %b. %Y")
   %td
-    == #{order.user.name} (#{order.user.email})
+    == #{order.creator.name} (#{order.creator.email})
   %td
     = render :partial => "order_actions", :locals => {:order => order}
