@@ -1,0 +1,9 @@
+%tr
+  %td
+    = f.object.user.name
+  %td
+    = f.text_field :description, :style => "width: 95%;"
+  %td
+    .input-prepend
+      %span.add-on £
+      = f.text_field :price, :id => "prependedInput", :class => "span2" ,:placeholder => "Price", :style => "width: 50px;"

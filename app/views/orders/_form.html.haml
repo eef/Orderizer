@@ -1,8 +1,18 @@
 = form_for @order, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
-    = f.label :status, :class => 'control-label'
-    .controls
-      = f.select :status, options_for_select(Orderizer::Application.config.statuses),:class => 'text_field'
+  = f.label :status, :style => "display: inline;"
+  = f.select :status, options_for_select(Orderizer::Application.config.statuses),:class => 'text_field'
+  %br
+  %br
+  %table.table.table-bordered.table-striped
+    %tr
+      %th
+        User
+      %th
+        Item Description
+      %th
+        Price
+    = f.fields_for :line_items do |line_item|
+      = render :partial => "edit_line_item", :locals => {:f => line_item}
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), orders_path, :class => 'btn'
