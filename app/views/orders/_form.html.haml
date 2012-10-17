@@ -1,6 +1,6 @@
 = form_for @order, :html => { :class => 'form-horizontal' } do |f|
   = f.label :status, :style => "display: inline;"
-  = f.select :status, options_for_select(Orderizer::Application.config.statuses),:class => 'text_field'
+  = f.select :status, options_for_select(Orderizer::Application.config.statuses, @order.status),:class => 'text_field'
   %br
   %br
   %table.table.table-bordered.table-striped
