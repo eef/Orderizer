@@ -1,0 +1,23 @@
+defaults: &defaults
+  adapter: mysql2
+  username: root
+  password: 
+  host: localhost
+
+development:
+  database: orderizer_dev
+  <<: *defaults
+
+test: &test
+  database: orderizer_production
+  <<: *defaults
+
+staging:
+  database: orderizer_staging
+  <<: *defaults
+
+production:
+  database: orderizer_live
+  <<: *defaults
+
+
