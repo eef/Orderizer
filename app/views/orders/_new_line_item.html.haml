@@ -3,5 +3,10 @@
 = form_for @line_item, :url => order_line_items_path(@order) do |f|
   .control-group
     .controls
+      = f.text_area :description, :rows => "5", :style => "width: 100%;", :class => 'text_field', :placeHolder => "Enter what you want #{current_user.first_name}"
+  %p
+    Or pick from the menu
+  .control-group
+    .controls
       = render :partial => "items", :locals => {:f => f}
   = f.submit "Add", :class => "btn btn-primary"
