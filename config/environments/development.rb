@@ -36,9 +36,9 @@ Orderizer::Application.configure do
   config.assets.debug = true
 
   ActionMailer::Base.smtp_settings = {
-    :address => "localhost",
-    :port => 1025,
-    :domain => "localhost:3000"
+    :address => "ravine.b7a.co.uk",
+    :port => 25,
+    :domain => "orderizer.b7a.co.uk"
   }
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
