@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
   belongs_to :creator, :class_name => "User", :foreign_key => :user_id
   has_many :users, :through => :line_items
   has_many :line_items, :dependent => :destroy
+  has_many :items, :through => :line_items
   accepts_nested_attributes_for :line_items, :allow_destroy => true
 
   # class methods

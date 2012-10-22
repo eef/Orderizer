@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121003202021) do
+ActiveRecord::Schema.define(:version => 20121022220338) do
+
+  create_table "items", :force => true do |t|
+    t.text     "description"
+    t.integer  "menu_id"
+    t.integer  "price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "items", ["menu_id"], :name => "index_items_on_menu_id"
 
   create_table "line_items", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20121003202021) do
     t.float    "price"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "item_id"
+  end
+
+  create_table "menus", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "orders", :force => true do |t|

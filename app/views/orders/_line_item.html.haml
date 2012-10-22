@@ -1,10 +1,10 @@
 %tr
   %td
-    = item.user.name
+    = line_item.user.name
   %td
-    == #{item.description} (£#{item.price})
+    == #{line_item.item.description} (£#{line_item.item.price})
   %td
-    - if item.owner?(current_user)
-      = link_to "Edit", edit_order_line_item_path(@order, item), :class => "btn btn-mini"
+    - if line_item.owner?(current_user)
+      = link_to "Edit", edit_order_line_item_path(@order, line_item), :class => "btn btn-mini"
     - else
       "-"

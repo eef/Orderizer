@@ -7,4 +7,4 @@
         User
       %th
         Item Description
-    = render :partial => "line_item", :collection => @order.line_items.includes(:user), :as => :item
+    = render :partial => "line_item", :collection => @order.line_items.includes(:user), :as => :line_item

@@ -1,0 +1,1 @@
+= f.select :item_id, options_for_select(Item.all.map {|item| [item.description, item.id]})
