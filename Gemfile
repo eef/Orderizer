@@ -10,6 +10,7 @@ gem 'haml-rails'
 gem 'therubyracer'
 gem 'devise'
 gem 'easy_roles'
+gem 'faker'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
