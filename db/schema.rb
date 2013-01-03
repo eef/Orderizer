@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(:version => 20121022220338) do
   create_table "items", :force => true do |t|
     t.text     "description"
     t.integer  "menu_id"
-    t.integer  "price"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   add_index "items", ["menu_id"], :name => "index_items_on_menu_id"

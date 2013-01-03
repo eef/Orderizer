@@ -39,9 +39,7 @@ class Order < ActiveRecord::Base
   end
 
   def total_price
-    price = 0
-    self.items.each {|item| price = price + item.price.to_s.to_d }
-    price
+    self.items.sum(:price)
   end
 
   def owner?(user)

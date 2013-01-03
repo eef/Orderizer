@@ -18,7 +18,7 @@
       %p
         %strong
           Total Price:
-        == £#{@order.total_price}
+        = number_to_currency(@order.total_price, :unit => "&pound;")
       %hr
       %h5
         Items
