@@ -14,6 +14,15 @@ admin_2.add_role! 'admin'
 # and a random generated number for the price
 # Items will be an array of hashes which match the attributes of an Item, except for the menu_id.  I will explain in further comments.
 # {:description => 'Description here', :price => 1.5}
+#
+# items = [
+#   {:description => "Sausage & Bacon Roll", :price => 1.5},
+#   {:description => "Scone & Sausage", :price => 1.5},
+#   {:description => "Scone & Bacon", :price => 1.5},
+#   {:description => "Sausage", :price => 1.5},
+#   {:description => "Bacon", :price => 1.5},
+#   {:description => "Sausage & Black pudding", :price => 1.5}
+# ]
 
 items = []
 
