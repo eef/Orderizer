@@ -40,7 +40,7 @@ class Order < ActiveRecord::Base
 
   def total_price
     price = 0
-    self.items.each {|item| price = price + item.price.to_s.to_d }
+    self.items.each {|item| price = price + item.price }
     price
   end
 
