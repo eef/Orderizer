@@ -1,10 +1,12 @@
 - if @order.line_items.blank?
-  No rolls yet
+  No items yet
 - else
   %table.table.table-bordered.table-striped
     %tr
       %th
-        User
+        Item
       %th
-        Item Description
+        Price
+      %th
+        Edit
     = render :partial => "line_item", :collection => @order.line_items.includes(:user), :as => :line_item

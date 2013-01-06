@@ -18,9 +18,5 @@
       %p
         %strong
           Total Price:
-        = number_to_currency(@order.total_price, :unit => "&pound;")
-      %hr
-      %h5
-        Items
-      %hr
+        = number_to_currency((@order.total_price/100), :unit => "&pound;")
       = render :partial => "line_items"

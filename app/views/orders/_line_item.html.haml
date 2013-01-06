@@ -1,11 +1,11 @@
 %tr
   %td
-    = line_item.user.name
-  %td
     - if line_item.item.blank?
       == #{line_item.description} (£#{line_item.price})
     - else
-      == #{line_item.item.description} (#{number_to_currency(line_item.item.price, :unit => "&pound;")})
+      == #{line_item.item.description}
+  %td
+    == #{number_to_currency((line_item.item.price/100), :unit => "&pound;")}
   %td
     - if line_item.owner?(current_user)
       = link_to "Edit", edit_order_line_item_path(@order, line_item), :class => "btn btn-mini"

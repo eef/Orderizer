@@ -8,7 +8,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @order.save
         OrderMailer.added_line_item(@line_item).deliver
-        format.html { redirect_to @order, notice: 'Your roll has been added to the order cunt face.' }
+        format.html { redirect_to @order, notice: 'Your item has been added.' }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
@@ -27,7 +27,7 @@ class LineItemsController < ApplicationController
     @line_item = current_user.line_items.find(params[:id])
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to @order, notice: 'You roll was successfully updated.' }
+        format.html { redirect_to @order, notice: 'You item was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
