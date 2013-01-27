@@ -6,6 +6,8 @@ Order.destroy_all
 # Create the users
 admin_1 = User.create! :email => "william.mcgregor@gmail.com", :password => "bawheed123", :password_confirmation => "bawheed123", :first_name => "Will", :last_name => "McGregor"
 admin_2 = User.create! :email => "uberhaqer@gmail.com", :password => "yermaw123", :password_confirmation => "yermaw123", :first_name => "Arthur", :last_name => "Canal"
+User.create! :email => "testy@testy.com", :password => "123456", :password_confirmation => "123456", :first_name => "Testy", :last_name => "Testerston"
+
 # Give the users a role
 admin_1.add_role! 'admin'
 admin_2.add_role! 'admin'

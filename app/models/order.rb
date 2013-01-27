@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :line_items_attributes
+  attr_accessible :status, :line_items_attributes
 
   belongs_to :creator, :class_name => "User", :foreign_key => :user_id
   has_many :users, :through => :line_items
